@@ -7,7 +7,12 @@ const Tab = createBottomTabNavigator();
 
 export const NavigationTabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={() => {
+        return {
+          headerShown: false,
+        };
+      }}>
       <Tab.Screen name="Главная" component={Home} />
       <Tab.Screen name="Настройки" component={Settings} />
     </Tab.Navigator>
