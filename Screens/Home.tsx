@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {UserAvatar} from '../Components/UserAvatar';
 import {CurrentDate} from '../Components/CurrentDate';
 
@@ -12,6 +12,7 @@ export const Home = () => {
       </View>
       <View style={styles.notifications} />
       <View style={styles.trains} />
+      <Text>Bla</Text>
     </>
   );
 };
