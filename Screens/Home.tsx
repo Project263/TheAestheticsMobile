@@ -12,7 +12,6 @@ export const Home = () => {
       </View>
       <View style={styles.notifications} />
       <View style={styles.trains} />
-      <Text>Bla</Text>
     </>
   );
 };
