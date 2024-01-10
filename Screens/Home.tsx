@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {UserAvatar} from '../Components/UserAvatar';
 import {CurrentDate} from '../Components/CurrentDate';
+import {Train} from '../Components/Train';
 
 export const Home = () => {
   return (
@@ -11,7 +12,16 @@ export const Home = () => {
         <CurrentDate />
       </View>
       <View style={styles.notifications} />
-      <View style={styles.trains} />
+      <ScrollView style={styles.trains}>
+        <Train />
+        <Train />
+        <Train />
+        <Train />
+        <Train />
+        <Train />
+        <Train />
+        <Train />
+      </ScrollView>
     </>
   );
 };
