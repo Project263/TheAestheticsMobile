@@ -1,9 +1,7 @@
 import React from 'react';
 
-import {NavigationTabs} from './Navigation/Tabs';
-import {NavigationContainer} from '@react-navigation/native';
-
 import SQLite from 'react-native-sqlite-storage';
+import {Text, View} from 'react-native';
 
 const db = SQLite.openDatabase(
   {
@@ -17,9 +15,9 @@ const db = SQLite.openDatabase(
 function App(): React.JSX.Element {
   return (
     <>
-      <NavigationContainer>
-        <NavigationTabs />
-      </NavigationContainer>
+      <View>
+        <Text>test</Text>
+      </View>
     </>
   );
 }
