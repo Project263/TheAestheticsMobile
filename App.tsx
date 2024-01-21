@@ -1,14 +1,13 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 
-import {Text, View} from 'react-native';
+import {Navigation} from './Components/Navigation';
 
 function App(): React.JSX.Element {
   return (
-    <>
-      <View>
-        <Text>test</Text>
-      </View>
-    </>
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
   );
 }
 

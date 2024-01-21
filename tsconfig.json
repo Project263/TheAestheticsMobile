@@ -1,3 +1,14 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      // продублировать в babel.config.js
+      "components/*": ["./Components/*"],
+      "screens/*": ["./Screens/*"],
+      "screens": ["./Screens/index"],
+      "icons/*": ["assets/Icons/*"]
+    }
+  }
 }
