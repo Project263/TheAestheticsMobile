@@ -2,21 +2,19 @@ import { View, Text, StyleSheet } from "react-native";
 
 import ThreeDots from "@Assets/icons/ThreeDots.svg";
 
-export const Header = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.userContainer}>
-        <View style={styles.userAvatar} />
-        <View>
-          <Text>Руслан Л.</Text>
-          <Text>Начинающий</Text>
-        </View>
+export const Header = () => (
+  <View style={styles.container}>
+    <View style={styles.userContainer}>
+      <View style={styles.userAvatar} />
+      <View>
+        <Text>Руслан Л.</Text>
+        <Text>Начинающий</Text>
       </View>
-
-      <ThreeDots />
     </View>
-  );
-};
+
+    <ThreeDots />
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
