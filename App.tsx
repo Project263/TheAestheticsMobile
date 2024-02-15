@@ -1,5 +1,10 @@
-import { Text } from "react-native";
+import { Header } from "@Components/Header";
+import { Layout } from "@Components/Layout";
 
 export default function App() {
-  return <Text>Test</Text>;
+  return (
+    <Layout>
+      <Header />
+    </Layout>
+  );
 }
