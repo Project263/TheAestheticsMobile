@@ -1,15 +1,5 @@
-import React from 'react';
+import { Text } from "react-native";
 
-import {Text, View} from 'react-native';
-
-function App(): React.JSX.Element {
-  return (
-    <>
-      <View>
-        <Text>test</Text>
-      </View>
-    </>
-  );
+export default function App() {
+  return <Text>Test</Text>;
 }
-
-export default App;
