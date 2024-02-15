@@ -1,5 +1,5 @@
-import { Header } from "./src/components";
+import { Text } from "react-native";
 
 export default function App() {
-  return <Header />;
+  return <Text>Test</Text>;
 }
