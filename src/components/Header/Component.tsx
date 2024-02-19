@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 
 import ThreeDots from "@Assets/icons/ThreeDots.svg";
+import { colors } from "@Constants/colors";
 
 type Props = {
   username: string;
@@ -28,11 +29,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginBottom: 12,
   },
   userAvatar: {
     width: 40,
     height: 40,
-    backgroundColor: "#FFCBA9",
+    backgroundColor: colors.main,
     borderRadius: 50,
   },
   userContainer: {
