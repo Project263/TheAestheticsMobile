@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import PointSvg from "@Assets/icons/Point.svg";
 import FireSvg from "@Assets/icons/Fire.svg";
+import { colors } from "@Constants/colors";
+
 type Props = {
   name: string;
-  diffuculty: number;
-  time: string;
+  difficulty: number;
+  timeToComplete: string;
+  date: Date;
 };
 
-export const ExerciseCard = ({ name, diffuculty, time }: Props) => {
+const getDate = (enteredDate: Date) => {
+  const monthName = enteredDate.toLocaleString("default", { month: "long" });
+  const displayedDate =
+    enteredDate.toString() === new Date().toString()
+      ? "Сегодня"
+      : `${enteredDate.getDate()} ${monthName}`;
+
+  return displayedDate;
+};
+
+export const ExerciseCard = ({
+  name,
+  difficulty,
+  timeToComplete,
+  date,
+}: Props) => {
+  const cachedDifficulty = useMemo(() => [...Array(difficulty)], [difficulty]);
+  const cachedDate = useCallback(() => getDate(date), [date]);
+
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
@@ -16,10 +37,10 @@ export const ExerciseCard = ({ name, diffuculty, time }: Props) => {
         <View>
           <Text style={styles.name}>{name}</Text>
           <View style={styles.time}>
-            <Text>{time}</Text>
+            <Text>{timeToComplete}</Text>
             <PointSvg />
             <View style={styles.diffuculty}>
-              {[...Array(diffuculty)].map((e, index) => (
+              {cachedDifficulty.map((e, index) => (
                 <FireSvg key={index} />
               ))}
             </View>
@@ -27,7 +48,7 @@ export const ExerciseCard = ({ name, diffuculty, time }: Props) => {
         </View>
       </View>
       <View style={styles.day}>
-        <Text>Сегодня</Text>
+        <Text>{cachedDate()}</Text>
       </View>
     </View>
   );
@@ -40,6 +61,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    borderRadius: 12,
   },
   leftContainer: {
     flexDirection: "row",
@@ -48,7 +70,7 @@ const styles = StyleSheet.create({
   image: {
     width: 36,
     height: 36,
-    backgroundColor: "#FFE2C8",
+    backgroundColor: colors.main,
     borderRadius: 4,
   },
   name: {
