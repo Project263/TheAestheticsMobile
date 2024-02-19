@@ -6,6 +6,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@Constants/*": ["src/constants/*"],
       "@Navigation/*": ["src/navigation/*"],
       "@Components/*": ["src/components/*"],
       "@Screens/*": ["src/screens/*"],
