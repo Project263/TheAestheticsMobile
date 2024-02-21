@@ -4,12 +4,14 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 type Props = {
   children?: React.ReactNode;
   onPress?: () => void;
+  disabled?: boolean;
 };
 
-export const ButtonOutlined = ({ children, onPress }: Props) => {
+export const ButtonOutlined = ({ children, onPress, disabled }: Props) => {
   return (
-    <View style={styles.buttonOuterContainer}>
+    <View style={disabled ? styles.disabled : styles.buttonOuterContainer}>
       <Pressable
+        disabled={disabled}
         style={({ pressed }) =>
           pressed
             ? [styles.pressed, styles.buttonInnerContainer]
@@ -17,7 +19,9 @@ export const ButtonOutlined = ({ children, onPress }: Props) => {
         }
         onPress={onPress}
       >
-        <Text style={styles.buttonText}>{children}</Text>
+        <Text style={disabled ? styles.buttonTextDisabled : styles.buttonText}>
+          {children}
+        </Text>
       </Pressable>
     </View>
   );
@@ -43,5 +47,10 @@ const styles = StyleSheet.create({
   buttonText: { color: colors.primary, textAlign: "center" },
   pressed: {
     backgroundColor: colors.btn.outlinedBtn.onPress,
+  },
+  buttonTextDisabled: { color: colors.btn.textDisabled, textAlign: "center" },
+  disabled: {
+    borderRadius: 28,
+    backgroundColor: colors.btn.backgroundDisabled,
   },
 });

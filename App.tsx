@@ -22,9 +22,9 @@ export default function App() {
         difficulty={2}
         date={new Date(2024, 6, 5)}
       />
-      <ButtonOutlined>Запланировать</ButtonOutlined>
-      <ButtonText>Запланировать</ButtonText>
-      <ButtonFilled>Запланировать</ButtonFilled>
+      <ButtonOutlined disabled>Запланировать</ButtonOutlined>
+      <ButtonText disabled>Запланировать</ButtonText>
+      <ButtonFilled disabled>Запланировать</ButtonFilled>
     </Layout>
   );
 }
