@@ -1,10 +1,8 @@
 import { ExerciseCard } from "@Components/ExerciseCard";
 import { Header } from "@Components/Header";
 import { Layout } from "@Components/Layout";
-import { ButtonOutlined } from "@Components/ButtonOutlined";
 import { user } from "@Constants/index";
-import { ButtonText } from "@Components/ButtonText";
-import { ButtonFilled } from "@Components/ButtonFilled";
+import { Button } from "@Components/Button";
 
 export default function App() {
   return (
@@ -22,9 +20,9 @@ export default function App() {
         difficulty={2}
         date={new Date(2024, 6, 5)}
       />
-      <ButtonOutlined disabled>Запланировать</ButtonOutlined>
-      <ButtonText disabled>Запланировать</ButtonText>
-      <ButtonFilled disabled>Запланировать</ButtonFilled>
+      <Button>Default</Button>
+      <Button type="outlined">Outlined</Button>
+      <Button type="text">Text</Button>
     </Layout>
   );
 }
