@@ -1,12 +1,12 @@
 import { StyleSheet, Text } from "react-native";
 
 type Props = {
-  type?: "large" | "medium" | "small";
+  size?: "large" | "medium" | "small";
   children?: React.ReactNode;
 };
 
-export const TextComponent = ({ type = "large", children }: Props) => {
-  return <Text style={[styles.text, styles[type]]}>{children}</Text>;
+export const TextComponent = ({ size = "medium", children }: Props) => {
+  return <Text style={[styles.text, styles[size]]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
   },
   large: {
     fontSize: 16,
-    lineHeight: 24,
     letterSpacing: 0.5,
   },
   medium: {
