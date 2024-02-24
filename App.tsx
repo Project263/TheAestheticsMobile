@@ -1,17 +1,25 @@
-import Typography from "@Components/Typography";
-import { SafeAreaView } from "react-native";
 
-const { Text, Title } = Typography;
+import { ExerciseCard } from "@Components/ExerciseCard";
+import { Header } from "@Components/Header";
+import { Layout } from "@Components/Layout";
+import { user } from "@Constants/index";
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Title>Title 1</Title>
-      <Typography.Title size="large">Title 2</Typography.Title>
-      <Typography.Title size="small">Title 3</Typography.Title>
-      <Text>blablab</Text>
-      <Typography.Text size="large">bla bla</Typography.Text>
-      <Typography.Text size="small">bla bla</Typography.Text>
-    </SafeAreaView>
+    <Layout>
+      <Header username={user.username} userLvl={user.userLvl} />
+      <ExerciseCard
+        timeToComplete="15 минут"
+        name="Трицепс"
+        difficulty={5}
+        date={new Date()}
+      />
+      <ExerciseCard
+        timeToComplete="15 минут"
+        name="Трицепс"
+        difficulty={5}
+        date={new Date(2024, 6, 5)}
+      />
+    </Layout>
   );
 }
