@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { StyleSheet, Text } from "react-native";
 
 type Props = {
@@ -6,26 +7,21 @@ type Props = {
 };
 
 export const TextComponent = ({ size = "medium", children }: Props) => {
-  return <Text style={[styles.text, styles[size]]}>{children}</Text>;
+  const textSizeStyles = useMemo(
+    () => ({
+      large: { fontSize: 16, letterSpacing: 0.5 },
+      medium: { fontSize: 14, lineHeight: 20, letterSpacing: 0.25 },
+      small: { fontSize: 12, lineHeight: 16, letterSpacing: 0.4 },
+    }),
+    []
+  );
+
+  return <Text style={[styles.text, textSizeStyles[size]]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
   text: {
     fontFamily: "Roboto",
     fontWeight: "400",
-  },
-  large: {
-    fontSize: 16,
-    letterSpacing: 0.5,
-  },
-  medium: {
-    fontSize: 14,
-    lineHeight: 20,
-    letterSpacing: 0.25,
-  },
-  small: {
-    fontSize: 12,
-    lineHeight: 16,
-    letterSpacing: 0.4,
   },
 });
