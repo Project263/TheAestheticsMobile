@@ -1,4 +1,3 @@
-
 import { ExerciseCard } from "@Components/ExerciseCard";
 import { Header } from "@Components/Header";
 import { Layout } from "@Components/Layout";
