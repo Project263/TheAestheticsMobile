@@ -3,6 +3,7 @@ export const palette = {
   secondary: "#835243",
   tertiary: "#705D06",
   error: "#B3261E",
+  white:  "#ffffff",
 
   primary0: "#000000",
   primary10: "#3A0B00",

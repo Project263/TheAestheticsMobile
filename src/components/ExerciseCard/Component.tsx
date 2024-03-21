@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import PointSvg from "@Assets/icons/Point.svg";
 import FireSvg from "@Assets/icons/Fire.svg";
-import { colors } from "@Constants/colors";
+import { palette } from "@Constants/colors";
 
 type Props = {
   name: string;
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   image: {
     width: 36,
     height: 36,
-    backgroundColor: colors.main,
+    backgroundColor: palette.primary100,
     borderRadius: 4,
   },
   name: {

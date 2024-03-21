@@ -1,5 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { colors } from "@Constants/colors";
+import { palette } from "@Constants/colors";
 
 type ButtonTypes = "filled" | "outlined" | "text";
 
@@ -18,27 +18,27 @@ export const Button = ({
 }: Props) => {
   const buttonOuterContainerStyles = {
     backgroundColor: {
-      filled: colors.btn.filledBtn.backgroundColor,
-      outlined: colors.btn.outlinedBtn.backgroundColor,
-      text: colors.btn.textBtn.backgroundColor,
+      filled: palette.primary,
+      outlined: 'transparent',
+      text: 'transparent',
     }[type],
-    borderColor: type === "outlined" ? colors.btn.outlinedBtn.border : undefined,
+    borderColor: type === "outlined" ? palette.primary : undefined,
     borderWidth: type === "outlined" ? 1 : undefined,
   };
 
   const buttonPressedStyles = {
     backgroundColor: {
-      filled: colors.btn.filledBtn.onPress,
-      outlined: colors.btn.outlinedBtn.onPress,
-      text: colors.btn.textBtn.onPress,
+      filled: palette.primary50,
+      outlined: palette.primary70 + '2F',
+      text: palette.primary70 + '2F',
     }[type],
   };
 
   const buttonTextStyles = {
     color: {
-      filled: colors.btn.filledBtn.textColor,
-      outlined: colors.btn.outlinedBtn.textColor,
-      text: colors.btn.textBtn.textColor,
+      filled: palette.white,
+      outlined: palette.primary,
+      text: palette.primary,
     }[type],
   };
 
